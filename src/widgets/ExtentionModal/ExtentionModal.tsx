@@ -21,11 +21,7 @@ export const ExtentionModal: FC<ExtentionModalProps> = (props) => {
 
         <p className={cls.modalDescr}>
           To work with our application, you have to install the{" "}
-          <a
-            href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href="https://metamask.io/download/" rel="noreferrer" target="_blank">
             Metamask browser extension
           </a>
         </p>

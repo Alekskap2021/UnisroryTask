@@ -1,8 +1,13 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames/bind";
 import cls from "./FormSection.module.scss";
-import Button from "shared/ui/Button/Button";
+import Button, { ThemeButton } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
+import { useGetUsersQuery } from "pages/MainPage/model";
+import { useAppDispatch, useAppSelector } from "shared/hooks/storeHooks";
+import { setUserData, removeUserData } from "pages/MainPage/model/formSlice";
+import { useEthers } from "@usedapp/core";
+import { CloseIcon } from "shared/assets/Icons/CloseIcon";
 
 const cn = classNames.bind(cls);
 
@@ -12,6 +17,20 @@ interface FormSectionProps {
 
 export const FormSection: FC<FormSectionProps> = (props) => {
   const { className } = props;
+
+  const [userName, setUserName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const { account } = useEthers();
+  const { data: usersList } = useGetUsersQuery(50);
+  const dispatch = useAppDispatch();
+  const { isInTable, userData } = useAppSelector((state) => state.formSlice);
+
+  const onSumbitHandler = () => {
+    dispatch(setUserData({ name: userName, email }));
+
+    setUserName("");
+    setEmail("");
+  };
 
   return (
     <section className={cls.FormSection}>
@@ -25,27 +44,52 @@ export const FormSection: FC<FormSectionProps> = (props) => {
         </p>
 
         <form action="" className={cls.form}>
-          <Input
-            name="name"
-            id="name"
-            label="name"
-            type="text"
-            placeholder="We will display your name in participation list"
-            className={cls.formInput}
-          />
-          <Input
-            name="email"
-            id="email"
-            label="email"
-            type="text"
-            placeholder="We will display your name in participation list"
-            className={cls.formInput}
-          />
-          <Button className={cls.formSubmitBtn}>Get early access</Button>
+          <label htmlFor="name" className={cls.inputLabel}>
+            name
+          </label>
+
+          {isInTable ? (
+            <h3 className={cls.usersInfo}>{userData?.name}</h3>
+          ) : (
+            <Input
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+              className={cls.formInput}
+              name="name"
+              id="name"
+              type="text"
+              placeholder="We will display your name in participation list"
+            />
+          )}
+
+          <label htmlFor="email" className={cls.inputLabel}>
+            email
+          </label>
+
+          {isInTable ? (
+            <h3 className={cls.usersInfo}>{userData?.email}</h3>
+          ) : (
+            <Input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={cls.formInput}
+              name="email"
+              id="email"
+              type="text"
+              placeholder="We will display your name in participation list"
+            />
+          )}
+          <Button
+            disabled={!email || !userName}
+            className={cls.formSubmitBtn}
+            onClick={onSumbitHandler}
+          >
+            {isInTable ? "List me to the table" : "Get early access"}
+          </Button>
         </form>
       </div>
 
-      <div className="table">
+      <div className={cn(cls.table, { [cls.table_visible]: isInTable })}>
         <h2 className="title">Participation listing (enable only for participants)</h2>
         <div className={cls.headers}>
           <h3>NAME</h3>
@@ -53,135 +97,29 @@ export const FormSection: FC<FormSectionProps> = (props) => {
           <h3>WALLET</h3>
         </div>
 
-        <ul className={cn(cls.rowsList)}>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-          <li className={cn(cls.rowsListItem)}>
-            <span className="ItemName">John Doe</span>
-            <span className="ItemEmail">johndoe@email.com</span>
-            <span className="ItemWallet">$500</span>
-          </li>
-        </ul>
+        <ul className={cls.rowsList}>
+          <li className={cn(cls.rowsListItem, cls.rowsListItem_userItem)}>
+            <span className="ItemName">{userData?.name}</span>
+            <span className="ItemEmail">{userData?.email}</span>
+            <span className="ItemWallet">{account?.slice(0, 19) + "..."}</span>
 
-        {/* <div className={cls.row}>John Doe</div>
-          <div className={cls.row}>johndoe@email.com</div>
-          <div className={cls.row}>$500</div>
-          <div className={cls.row}>Jane Doe</div>
-          <div className={cls.row}>janedoe@email.com</div>
-          <div className={cls.row}>$1000</div> */}
+            <Button
+              theme={ThemeButton.CLEAR}
+              className={cls.rowsListItem_userItemBtn}
+              title="Exclude"
+              onClick={() => dispatch(removeUserData())}
+            >
+              <CloseIcon />
+            </Button>
+          </li>
+          {usersList?.items.map(({ address, id, email, username }) => (
+            <li className={cn(cls.rowsListItem)} key={id}>
+              <span className="ItemName">{username}</span>
+              <span className="ItemEmail">{email}</span>
+              <span className="ItemWallet">{address.slice(0, 24) + "..."}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

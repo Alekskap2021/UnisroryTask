@@ -21,10 +21,5 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input: FC<InputProps> = (props) => {
   const { className, theme = ThemeInput.DEFAULT, id, ...otherProps } = props;
 
-  return (
-    <label htmlFor={id} className={cn(cls.label)}>
-      <span className={cls.labelText}>{props.label || ""}</span>
-      <input className={cn(cls.Input, cls[theme], className)} {...otherProps} />
-    </label>
-  );
+  return <input className={cn(cls.Input, cls[theme], className)} {...otherProps} />;
 };
