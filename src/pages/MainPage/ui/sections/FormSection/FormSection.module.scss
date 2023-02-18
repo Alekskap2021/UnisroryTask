@@ -1,0 +1,85 @@
+.FormSection {
+  padding-top: 48px;
+  padding-bottom: 85px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 421px;
+}
+
+.formTitle {
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.formDescr {
+  max-width: 421px;
+  margin-bottom: 35px;
+}
+
+.formInput:first-child {
+  margin-bottom: 18px;
+}
+
+.formInput:last-child {
+  margin-bottom: 24px;
+}
+
+.formSubmitBtn {
+  align-self: flex-start;
+}
+
+.headers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 35px;
+  margin-bottom: 16px;
+  padding-right: 30px;
+
+  h3 {
+    font-family: var(--font-family-main);
+    font-size: 24px;
+  }
+}
+
+.rowsList {
+  max-height: 685px;
+  padding-right: 30px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--color-main);
+    width: 1px;
+  }
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    opacity: 0.5;
+  }
+}
+
+.rowsListItem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-main);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-main);
+  }
+
+  span {
+    font-family: var(--font-family-descr);
+    font-size: 14px;
+  }
+}

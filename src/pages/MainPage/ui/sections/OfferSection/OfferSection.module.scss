@@ -1,0 +1,63 @@
+.OfferSection {
+  padding-top: 200px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.offerTitle {
+  margin-bottom: 45px;
+  span {
+    color: var(--color-bg);
+    text-shadow: -0 -1px 0 #ffffff, 0 -1px 0 #ffffff, -0 1px 0 #ffffff, 0 1px 0 #ffffff,
+      -1px -0 0 #ffffff, 1px -0 0 #ffffff, -1px 0 0 #ffffff, 1px 0 0 #ffffff, -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  }
+}
+
+.offerDescr {
+  max-width: 421px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statsList {
+  min-width: 200px;
+}
+
+.statsTitle {
+  font-family: var(--font-family-main);
+  font-size: 32px;
+  margin-bottom: 42px;
+}
+
+.statsListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #d2c4c4;
+  }
+}
+
+.ItemCount {
+  font-family: var(--font-family-main);
+  color: var(--color-accent);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.ItemDescr {
+  font-family: var(--font-family-main);
+  font-size: 18px;
+  font-weight: 400;
+}

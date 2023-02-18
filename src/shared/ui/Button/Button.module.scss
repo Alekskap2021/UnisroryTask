@@ -1,0 +1,27 @@
+.Button {
+  cursor: pointer;
+}
+
+.default {
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  padding: 10px 25px 7px 25px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  font-family: var(--font-family-main);
+  font-size: 18px;
+  line-height: 18px;
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: grayscale(0.3);
+  }
+}
+
+.clear {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

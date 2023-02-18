@@ -1,0 +1,35 @@
+// Themes
+.default {
+  font-family: var(--font-family-descr);
+  color: var(--color-main);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+
+  &::placeholder {
+    font-family: var(--font-family-descr);
+    color: var(--color-main);
+    opacity: 0.5;
+    font-size: 14px;
+  }
+}
+
+.clear {
+  padding: 0;
+  border-radius: 0;
+}
+//
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelText {
+  font-family: var(--font-family-main);
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
