@@ -4,16 +4,10 @@ import cls from "./OfferSection.module.scss";
 
 const cn = classNames.bind(cls);
 
-interface OfferSectionProps {
-  className?: string;
-}
-
-export const OfferSection: FC<OfferSectionProps> = (props) => {
-  const { className } = props;
-
+export const OfferSection: FC = () => {
   return (
     <section className={cls.OfferSection}>
-      <div className="">
+      <div>
         <h1 className={cn(cls.offerTitle, "title")}>
           Explore Your own planet <br />
           In <span>our New</span> metaverse

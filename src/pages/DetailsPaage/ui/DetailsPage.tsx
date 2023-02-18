@@ -1,13 +1,7 @@
 import { UserDetailsSection } from "./sections/UserDetailsSection";
 import { FC } from "react";
 
-interface DetailsPageProps {
-  className?: string;
-}
-
-const DetailsPage: FC<DetailsPageProps> = (props) => {
-  const { className } = props;
-
+const DetailsPage: FC = () => {
   return <UserDetailsSection />;
 };
 

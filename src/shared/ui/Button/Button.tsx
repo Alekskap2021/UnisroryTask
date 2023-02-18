@@ -7,11 +7,14 @@ const cn = classNames.bind(cls);
 // Как правило, в дизайне есть несколько видов кнопок.
 // Описываем в стилях нужные темы и обращаемся к ним через cls[theme]
 // theme кидаем пропсом. По умалчанию - default
+// В этом дизайне это не требуется. Реализовано на перспективу :)
 export const enum ThemeButton {
   CLEAR = "clear",
   DEFAULT = "default",
 }
 
+// Пропсом принимаем className для того, чтобы гибко управлять кнопкой из вне
+// и оставить ее переиспользуемой
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButton;

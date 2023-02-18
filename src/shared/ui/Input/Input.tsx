@@ -15,7 +15,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   type: string;
   id: string;
-  label?: string;
 }
 
 export const Input: FC<InputProps> = (props) => {

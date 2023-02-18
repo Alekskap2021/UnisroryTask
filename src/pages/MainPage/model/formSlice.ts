@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface userI {
   name: string;
@@ -18,7 +18,7 @@ const initialState: formStateI = {
 };
 
 // Slice
-export const formSlice = createSlice({
+const formSlice = createSlice({
   name,
   initialState,
   reducers: {

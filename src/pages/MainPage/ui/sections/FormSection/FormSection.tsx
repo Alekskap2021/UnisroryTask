@@ -1,27 +1,33 @@
+// Hooks
 import { FC, useState } from "react";
-import classNames from "classnames/bind";
-import cls from "./FormSection.module.scss";
-import Button, { ThemeButton } from "shared/ui/Button/Button";
-import { Input } from "shared/ui/Input/Input";
-import { useGetUsersQuery } from "pages/MainPage/model";
 import { useAppDispatch, useAppSelector } from "shared/hooks/storeHooks";
-import { setUserData, removeUserData } from "pages/MainPage/model/formSlice";
+import { useGetUsersQuery } from "pages/MainPage/model";
 import { useEthers } from "@usedapp/core";
+
+// Actions
+import { setUserData, removeUserData } from "pages/MainPage/model/formSlice";
+
+// Components
+import Button, { ThemeButton } from "shared/ui/Button/Button";
+import { Link } from "react-router-dom";
+import { Input } from "shared/ui/Input/Input";
+
+// Assets
 import { CloseIcon } from "shared/assets/Icons/CloseIcon";
+import cls from "./FormSection.module.scss";
+
+// Libs
+import classNames from "classnames/bind";
 
 const cn = classNames.bind(cls);
 
-interface FormSectionProps {
-  className?: string;
-}
-
-export const FormSection: FC<FormSectionProps> = (props) => {
-  const { className } = props;
-
+export const FormSection: FC = () => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+
   const { account } = useEthers();
   const { data: usersList } = useGetUsersQuery(50);
+
   const dispatch = useAppDispatch();
   const { isInTable, userData } = useAppSelector((state) => state.formSlice);
 
@@ -34,6 +40,7 @@ export const FormSection: FC<FormSectionProps> = (props) => {
 
   return (
     <section className={cls.FormSection}>
+      {/* Form */}
       <div className="form">
         <h2 className={cn(cls.formTitle, "title")}>Beta test registration</h2>
 
@@ -48,6 +55,7 @@ export const FormSection: FC<FormSectionProps> = (props) => {
             name
           </label>
 
+          {/* Toggle input/userData */}
           {isInTable ? (
             <h3 className={cls.usersInfo}>{userData?.name}</h3>
           ) : (
@@ -61,11 +69,13 @@ export const FormSection: FC<FormSectionProps> = (props) => {
               placeholder="We will display your name in participation list"
             />
           )}
+          {/*  */}
 
           <label htmlFor="email" className={cls.inputLabel}>
             email
           </label>
 
+          {/* Toggle input/userData */}
           {isInTable ? (
             <h3 className={cls.usersInfo}>{userData?.email}</h3>
           ) : (
@@ -79,16 +89,28 @@ export const FormSection: FC<FormSectionProps> = (props) => {
               placeholder="We will display your name in participation list"
             />
           )}
+          {/*  */}
+
           <Button
-            disabled={!email || !userName}
+            disabled={!email || !userName || !account}
             className={cls.formSubmitBtn}
             onClick={onSumbitHandler}
+            title={
+              !account
+                ? "Please, connect your Metamask wallet"
+                : (!email || !userName) && !isInTable
+                ? "Please complete both fields"
+                : ""
+            }
           >
+            {/* Toggle btns text */}
             {isInTable ? "List me to the table" : "Get early access"}
+            {/*  */}
           </Button>
         </form>
       </div>
 
+      {/* Table */}
       <div className={cn(cls.table, { [cls.table_visible]: isInTable })}>
         <h2 className="title">Participation listing (enable only for participants)</h2>
         <div className={cls.headers}>
@@ -98,11 +120,13 @@ export const FormSection: FC<FormSectionProps> = (props) => {
         </div>
 
         <ul className={cls.rowsList}>
+          {/* Users data at 1st row */}
           <li className={cn(cls.rowsListItem, cls.rowsListItem_userItem)}>
             <span className="ItemName">{userData?.name}</span>
             <span className="ItemEmail">{userData?.email}</span>
             <span className="ItemWallet">{account?.slice(0, 19) + "..."}</span>
 
+            {/* Btn for remove user from table */}
             <Button
               theme={ThemeButton.CLEAR}
               className={cls.rowsListItem_userItemBtn}
@@ -112,14 +136,20 @@ export const FormSection: FC<FormSectionProps> = (props) => {
               <CloseIcon />
             </Button>
           </li>
+          {/*  */}
+
+          {/* Dynamic elements from backend */}
           {usersList?.items.map(({ address, id, email, username }) => (
-            <li className={cn(cls.rowsListItem)} key={id}>
-              <span className="ItemName">{username}</span>
-              <span className="ItemEmail">{email}</span>
-              <span className="ItemWallet">{address.slice(0, 24) + "..."}</span>
+            <li className={cls.rowsListItem} key={id}>
+              <Link to={`/details/${id}`} className={cls.rowsListItem_link}>
+                <span className="ItemName">{username}</span>
+                <span className="ItemEmail">{email}</span>
+                <span className="ItemWallet">{address.slice(0, 24) + "..."}</span>
+              </Link>
             </li>
           ))}
         </ul>
+        {/*  */}
       </div>
     </section>
   );

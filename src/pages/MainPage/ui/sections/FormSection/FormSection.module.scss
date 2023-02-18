@@ -49,9 +49,11 @@
 .table {
   transition: opacity 0.3s ease;
   opacity: 0;
+  transform: scale(0);
   pointer-events: none;
 
   &_visible {
+    transform: scale(1);
     opacity: 1;
     pointer-events: all;
   }
@@ -91,13 +93,6 @@
 }
 
 .rowsListItem {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, auto);
-  grid-gap: 10px;
-  padding: 16px 0;
-  border-top: 1px solid var(--color-main);
-
   &:last-child {
     border-bottom: 1px solid var(--color-main);
   }
@@ -105,6 +100,21 @@
   span {
     font-family: var(--font-family-descr);
     font-size: 14px;
+  }
+
+  &_link,
+  &_userItem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, auto);
+    grid-gap: 10px;
+    padding: 16px 0;
+    border-top: 1px solid var(--color-main);
+    transition: color 0.3s ease;
+  }
+
+  &_link:hover {
+    color: var(--color-accent);
   }
 
   &_userItem {

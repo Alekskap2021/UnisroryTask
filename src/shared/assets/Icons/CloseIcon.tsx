@@ -6,7 +6,7 @@ interface CloseIconProps extends SVGProps<SVGSVGElement> {
 }
 
 export const CloseIcon: FC<CloseIconProps> = (props) => {
-  const { className } = props;
+  const { className, color } = props;
 
   return (
     <svg
@@ -25,7 +25,7 @@ export const CloseIcon: FC<CloseIconProps> = (props) => {
           height="10"
           rx="0.5"
           transform="rotate(-45 2.11035 2.81799)"
-          fill="white"
+          fill={color || "white"}
         />
         <rect
           x="2.81738"
@@ -34,12 +34,12 @@ export const CloseIcon: FC<CloseIconProps> = (props) => {
           height="10"
           rx="0.5"
           transform="rotate(-135 2.81738 9.88904)"
-          fill="white"
+          fill={color || "white"}
         />
       </g>
       <defs>
         <clipPath id="clip0_46_976">
-          <rect width="12" height="12" fill="white" />
+          <rect width="12" height="12" fill={color || "white"} />
         </clipPath>
       </defs>
     </svg>

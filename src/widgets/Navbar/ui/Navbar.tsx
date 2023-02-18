@@ -1,3 +1,7 @@
+// Hooks
+import { useEthers } from "@usedapp/core";
+import { useEffect, useState } from "react";
+
 // Components
 import Button from "shared/ui/Button/Button";
 import { Link } from "react-router-dom";
@@ -8,30 +12,25 @@ import classNames from "classnames/bind";
 // Assets
 import cls from "./Navbar.module.scss";
 
-import { Mainnet, DAppProvider, useEtherBalance, useEthers, Config, Goerli } from "@usedapp/core";
-import { formatEther } from "@ethersproject/units";
-import { getDefaultProvider } from "ethers";
-import { useEffect, useState } from "react";
-
 const cn = classNames.bind(cls);
 
 interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = (props: NavbarProps) => {
+  const { className } = props;
+
   const [walletAdress, setWalletArdess] = useState<string>("");
   const { account, deactivate, activateBrowserWallet } = useEthers();
-  const etherBalance = useEtherBalance(account);
 
-  const num = "0x279D9f0c10fBB3D443243423141";
-
+  // Перерисовываем компонент, если состояние аккаунта изменилось
   useEffect(() => {
-    console.log("ACCOUNT IS: ", account);
-    console.log("etherBalance IS: ", etherBalance);
     account && setWalletArdess(account.slice(0, 19) + "...");
   }, [account]);
 
+  // Помещааем в переменную кнопки с разным текстом и событиями в зависимости от того
+  // привязан ли кошелек
   const button = account ? (
     <Button onClick={() => deactivate()} className={cls.connectedBtn} title="Disconnect">
       {walletAdress}
