@@ -1,6 +1,6 @@
 // Components
-import AppLink from "shared/ui/AppLink/AppLink";
 import Button from "shared/ui/Button/Button";
+import { Link } from "react-router-dom";
 
 // Libs
 import classNames from "classnames/bind";
@@ -16,10 +16,11 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => (
   <div className={cn(cls.Navbar, className)}>
-    <AppLink to="/" className={cls.mainLink}>
+    <Link to="/" className={cls.mainLink}>
       Лого
-    </AppLink>
+    </Link>
 
-    <Button>Connect metamask</Button>
+    {/* <Button>Connect metamask</Button> */}
+    <Link to="/details">Connect metamask</Link>
   </div>
 );
