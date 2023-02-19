@@ -6,8 +6,16 @@
   justify-content: space-between;
 }
 
+.test {
+  position: relative;
+  z-index: 0;
+}
+
 .offerTitle {
   margin-bottom: 45px;
+  position: relative;
+  //   z-index: 1;
+
   span {
     color: var(--color-bg);
     text-shadow: -0 -1px 0 #ffffff, 0 -1px 0 #ffffff, -0 1px 0 #ffffff, 0 1px 0 #ffffff,
@@ -15,6 +23,13 @@
       1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff,
       1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
   }
+}
+
+.planet {
+  position: absolute;
+  right: -8%;
+  top: -42%;
+  z-index: -1;
 }
 
 .offerDescr {

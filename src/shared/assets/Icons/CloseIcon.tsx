@@ -17,7 +17,7 @@ export const CloseIcon: FC<CloseIconProps> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0_46_976)">
+      <g clipPath="url(#clip0_46_976)">
         <rect
           x="2.11035"
           y="2.81799"

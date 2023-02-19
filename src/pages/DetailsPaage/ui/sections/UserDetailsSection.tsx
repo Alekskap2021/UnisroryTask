@@ -1,6 +1,6 @@
 // Hooks
 import { useParams } from "react-router-dom";
-import { useGetUserDetailsQuery } from "../../model/index";
+import { useGetUserDetailsQuery } from "shared/api";
 
 // Types
 import { FC } from "react";

@@ -1,0 +1,38 @@
+.AnimatedPlanet {
+  &_wrapper {
+    width: 552px;
+    height: 552px;
+    overflow: visible;
+    position: relative;
+    border-radius: 100%;
+    background-image: url("../../shared/assets/Images/PlanetAura.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_planetImg {
+    position: absolute;
+  }
+
+  &_orangeLine {
+    z-index: 1;
+  }
+
+  &_label {
+    position: absolute;
+    top: 30px;
+    right: 46%;
+    width: 80px;
+    height: 30px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #171719;
+    font-family: var(--font-family-main);
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+  }
+}

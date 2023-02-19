@@ -7,7 +7,7 @@ import { ExtentionModal } from "widgets/ExtentionModal/ExtentionModal";
 
 // Providers && Configs
 import { Provider as RTKProvider } from "react-redux";
-import { DAppProvider } from "@usedapp/core";
+import { DAppProvider, useEthers } from "@usedapp/core";
 import { AppRouter } from "app/providers/router/AppRouter";
 import { dappConfig } from "./configs/dapp/dappConfig";
 import store from "app/configs/store";
@@ -19,7 +19,7 @@ function App() {
   const [isModalOpened, setIsModalOpened] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsModalOpened(true), 2000);
+    setTimeout(() => setIsModalOpened(true), 500);
   }, []);
 
   return (

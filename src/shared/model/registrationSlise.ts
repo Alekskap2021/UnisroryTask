@@ -1,28 +1,28 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface userI {
+interface userDataI {
   name: string;
   email: string;
 }
 
-interface formStateI {
-  userData: userI | null;
+interface registrationStateI {
+  userData: userDataI | null;
   isInTable: boolean;
 }
 
 // Init
 const name = "form";
-const initialState: formStateI = {
+const initialState: registrationStateI = {
   userData: null,
   isInTable: false,
 };
 
 // Slice
-const formSlice = createSlice({
+const registrationSlice = createSlice({
   name,
   initialState,
   reducers: {
-    setUserData: (state, action: PayloadAction<userI>) => {
+    setUserData: (state, action: PayloadAction<userDataI>) => {
       state.userData = action.payload;
       state.isInTable = true;
     },
@@ -35,5 +35,5 @@ const formSlice = createSlice({
   extraReducers: {},
 });
 
-export const { setUserData, removeUserData } = formSlice.actions;
-export default formSlice.reducer;
+export const { setUserData, removeUserData } = registrationSlice.actions;
+export default registrationSlice.reducer;
