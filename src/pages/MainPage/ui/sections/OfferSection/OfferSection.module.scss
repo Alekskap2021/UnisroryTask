@@ -14,22 +14,23 @@
 .offerTitle {
   margin-bottom: 45px;
   position: relative;
-  //   z-index: 1;
 
   span {
     color: var(--color-bg);
-    text-shadow: -0 -1px 0 #ffffff, 0 -1px 0 #ffffff, -0 1px 0 #ffffff, 0 1px 0 #ffffff,
-      -1px -0 0 #ffffff, 1px -0 0 #ffffff, -1px 0 0 #ffffff, 1px 0 0 #ffffff, -1px -1px 0 #ffffff,
-      1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff,
-      1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    -webkit-text-stroke: 1px var(--color-main);
   }
-}
 
-.planet {
-  position: absolute;
-  right: -8%;
-  top: -42%;
-  z-index: -1;
+  &:after {
+    content: attr(mask-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: var(--color-accent);
+    -webkit-mask: var(--path-planet-img) no-repeat calc(100% - var(--pos-planet-x))
+      calc(100% - var(--pos-planet-y));
+    -webkit-text-stroke: 1px var(--color-accent);
+  }
 }
 
 .offerDescr {

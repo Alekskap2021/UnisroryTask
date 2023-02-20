@@ -2,7 +2,6 @@ import { FC } from "react";
 import classNames from "classnames/bind";
 import cls from "./OfferSection.module.scss";
 import { AnimatedPlanet } from "features/AnimatedPlanet/AnimatedPlanet";
-import imgPlanet from "shared/assets/Images/ImageMainPlanet.png";
 
 const cn = classNames.bind(cls);
 
@@ -10,12 +9,14 @@ export const OfferSection: FC = () => {
   return (
     <section className={cls.OfferSection}>
       <div className={cls.test}>
-        <h1 className={cn(cls.offerTitle, "title")}>
+        <h1
+          className={cn(cls.offerTitle, "title")}
+          mask-text="Explore Your own planet In our New metaverse"
+        >
           Explore Your own planet <br />
           In <span>our New</span> metaverse
-          {/* <AnimatedPlanet className={cls.planet} /> */}
+          <AnimatedPlanet className={cls.planet} />
         </h1>
-        <AnimatedPlanet className={cls.planet} />
 
         <p className={cn(cls.offerDescr, "descr")}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
