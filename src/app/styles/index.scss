@@ -1,0 +1,43 @@
+@import "./variables/global.scss";
+@import "./reset.scss";
+@import "./fonts.scss";
+
+.app {
+  background: var(--color-bg);
+  color: var(--color-main);
+  min-height: 100vh;
+  padding: 0 65px;
+}
+
+h1.title {
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 120px;
+}
+
+h2.title {
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+p.descr {
+  font-family: var(--font-family-descr);
+  font-size: 16px;
+  line-height: 16px;
+}
+
+// Custom scrollbar for HTML
+html::-webkit-scrollbar {
+  height: 10px;
+  width: 3px;
+  border-radius: 4px;
+  background-color: var(--color-bg);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+}
+//
