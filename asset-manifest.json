@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/UnisroryTask/static/css/main.40f21130.css",
+    "main.css": "/UnisroryTask/static/css/main.0c3108e2.css",
     "main.js": "/UnisroryTask/static/js/main.667ed802.js",
     "static/css/75.d51031de.chunk.css": "/UnisroryTask/static/css/75.d51031de.chunk.css",
     "static/js/75.4d457b5a.chunk.js": "/UnisroryTask/static/js/75.4d457b5a.chunk.js",
@@ -13,7 +13,7 @@
     "static/media/AvenirNextCyrRegular.woff": "/UnisroryTask/static/media/AvenirNextCyrRegular.1f3e188cad9e2dc3259b.woff",
     "static/media/BebasNeueBold.woff": "/UnisroryTask/static/media/BebasNeueBold.e0462489b6967dbc5942.woff",
     "index.html": "/UnisroryTask/index.html",
-    "main.40f21130.css.map": "/UnisroryTask/static/css/main.40f21130.css.map",
+    "main.0c3108e2.css.map": "/UnisroryTask/static/css/main.0c3108e2.css.map",
     "main.667ed802.js.map": "/UnisroryTask/static/js/main.667ed802.js.map",
     "75.d51031de.chunk.css.map": "/UnisroryTask/static/css/75.d51031de.chunk.css.map",
     "75.4d457b5a.chunk.js.map": "/UnisroryTask/static/js/75.4d457b5a.chunk.js.map",
@@ -22,7 +22,7 @@
     "571.e8526bb1.chunk.js.map": "/UnisroryTask/static/js/571.e8526bb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40f21130.css",
+    "static/css/main.0c3108e2.css",
     "static/js/main.667ed802.js"
   ]
 }
