@@ -24,15 +24,15 @@ function App() {
 
   return (
     <RTKProvider store={store}>
-      <DAppProvider config={dappConfig}>
-        <div className="app">
-          <Header />
-          <div className="content-page">
-            <AppRouter />
-          </div>
-          <ExtentionModal isOpened={isModalOpened} onClose={setIsModalOpened} />
+      {/* <DAppProvider config={dappConfig}> */}
+      <div className="app">
+        <Header />
+        <div className="content-page">
+          <AppRouter />
         </div>
-      </DAppProvider>
+        {/* <ExtentionModal isOpened={isModalOpened} onClose={setIsModalOpened} /> */}
+      </div>
+      {/* </DAppProvider> */}
     </RTKProvider>
   );
 }
