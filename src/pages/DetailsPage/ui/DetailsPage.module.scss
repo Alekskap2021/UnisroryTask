@@ -1,0 +1,14 @@
+.UserDetailsSection {
+  font-family: var(--font-family-main);
+
+  padding-top: 110px;
+  padding-bottom: 170px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planet {
+  margin-right: calc((100vw - 100%) / 2 * -1 + 1px);
+}

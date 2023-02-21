@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-interface userI {
+export interface userI {
   id: number;
   username: string;
   email: string;
@@ -29,11 +29,11 @@ export const fetchUsersApi = createApi({
       serializeQueryArgs: ({ endpointName }) => {
         return endpointName;
       },
-      // Always merge incoming data to the cache entry
+      // Мерджим новые данные в кеш
       merge: (currentCache, newItems) => {
         currentCache.items.push(...newItems.items);
       },
-      // Refetch when the page arg changes
+
       forceRefetch({ currentArg, previousArg }) {
         return currentArg !== previousArg;
       },

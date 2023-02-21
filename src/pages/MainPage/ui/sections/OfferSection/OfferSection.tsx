@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames/bind";
 import cls from "./OfferSection.module.scss";
-import { AnimatedPlanet } from "features/AnimatedPlanet/AnimatedPlanet";
+import { AnimatedPlanet } from "shared/ui";
 
 const cn = classNames.bind(cls);
 

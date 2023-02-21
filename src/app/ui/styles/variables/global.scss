@@ -1,0 +1,23 @@
+:root {
+  // Colors
+  --color-accent: #e75626;
+  --color-main: #ffffff;
+  --color-bg: #171719;
+
+  // Fonts
+  --font-family-main: Bebas, Consolas, sans-serif;
+  --font-family-descr: Avenir, Roboto, sans-serif;
+
+  // Paths
+  --path-planet-aura: url("../../../../shared/ui/assets/Images/PlanetAura.png");
+  --path-planet-img: url("../../../../shared/ui/assets/Images/ImageMainPlanet.png");
+
+  // Sizes
+  --size-orbit: 570px;
+  --size-planet: 320px;
+
+  // Positions
+
+  --pos-planet-x: 20px;
+  --pos-planet-y: -45px;
+}

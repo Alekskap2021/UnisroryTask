@@ -1,0 +1,32 @@
+.headers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 35px;
+  margin-bottom: 16px;
+  padding-right: 30px;
+
+  h3 {
+    font-family: var(--font-family-main);
+    font-size: 24px;
+  }
+}
+
+.rowsList {
+  max-height: 685px;
+  padding-right: 30px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--color-main);
+    width: 1px;
+  }
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    opacity: 0.5;
+  }
+}

@@ -1,6 +1,9 @@
-import { MainPage } from "pages/MainPage";
-import { DetailsPage } from "pages/DetailsPaage";
+import { lazy } from "react";
 import { RouteProps } from "react-router-dom";
+
+// Импорт с lazy, чтобы не грузить бандл
+const DetailsPage = lazy(() => import("pages/DetailsPage"));
+const MainPage = lazy(() => import("pages/MainPage"));
 
 export enum AppRoutes {
   MAIN = "main",

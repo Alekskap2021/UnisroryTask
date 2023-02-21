@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { OfferSection, FormSection } from "./sections";
 
-const MainPage: FC = () => {
+export const MainPage: FC = () => {
   return (
     <>
       <OfferSection />
@@ -9,5 +9,3 @@ const MainPage: FC = () => {
     </>
   );
 };
-
-export default MainPage;

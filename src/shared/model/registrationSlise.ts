@@ -8,6 +8,7 @@ interface userDataI {
 interface registrationStateI {
   userData: userDataI | null;
   isInTable: boolean;
+  isTableVisible: boolean;
 }
 
 // Init
@@ -15,6 +16,7 @@ const name = "form";
 const initialState: registrationStateI = {
   userData: null,
   isInTable: false,
+  isTableVisible: false,
 };
 
 // Slice
@@ -25,6 +27,7 @@ const registrationSlice = createSlice({
     setUserData: (state, action: PayloadAction<userDataI>) => {
       state.userData = action.payload;
       state.isInTable = true;
+      state.isTableVisible = true;
     },
     removeUserData: (state) => {
       state.isInTable = false;

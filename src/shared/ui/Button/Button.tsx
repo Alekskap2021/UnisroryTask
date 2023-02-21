@@ -6,7 +6,7 @@ const cn = classNames.bind(cls);
 
 // Как правило, в дизайне есть несколько видов кнопок.
 // Описываем в стилях нужные темы и обращаемся к ним через cls[theme]
-// theme кидаем пропсом. По умалчанию - default
+// theme кидаем пропсом. По умолчанию - default
 // В этом дизайне это не требуется. Реализовано на перспективу :)
 export const enum ThemeButton {
   CLEAR = "clear",
@@ -21,7 +21,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const { className, children, theme = ThemeButton.DEFAULT, ...otherProps } = props;
 
   return (
@@ -30,5 +30,3 @@ const Button: FC<ButtonProps> = (props) => {
     </button>
   );
 };
-
-export default Button;
