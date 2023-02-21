@@ -23,7 +23,7 @@ export const UsersTable: FC<UsersTableProps> = (props) => {
 
   const tableRef: MutableRefObject<HTMLUListElement | null> = useRef(null);
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const { data: usersList, isLoading, isFetching } = useGetUsersQuery(currentPage);
+  const { data: usersList, isLoading } = useGetUsersQuery(currentPage);
 
   // Сайд эффект для добавления/удаления ивента скролла на таблицу
   useEffect(() => {
