@@ -19,7 +19,7 @@ function App() {
   const [isModalOpened, setIsModalOpened] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsModalOpened(true), 500);
+    setTimeout(() => setIsModalOpened(true), 1700);
   }, []);
 
   return (
