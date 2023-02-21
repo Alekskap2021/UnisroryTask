@@ -1,5 +1,7 @@
 # О проекте
 
+## [Live Demo](https://alekskap2021.github.io/UnisroryTask/)
+
 ## Техническое задание
 
 - **Сверстать 2 страницы в соответствии с [дизайном](https://www.figma.com/file/ATvmQ5ieU3r5LleCxpeqk9/Unistory-frontend-test?node-id=20%3A117&t=BMPKyEd5ZfGhu81w-1)**
