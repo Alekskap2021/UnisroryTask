@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/UnisroryTask/static/css/main.0c3108e2.css",
-    "main.js": "/UnisroryTask/static/js/main.667ed802.js",
-    "static/css/75.d51031de.chunk.css": "/UnisroryTask/static/css/75.d51031de.chunk.css",
-    "static/js/75.4d457b5a.chunk.js": "/UnisroryTask/static/js/75.4d457b5a.chunk.js",
-    "static/css/713.15302bf4.chunk.css": "/UnisroryTask/static/css/713.15302bf4.chunk.css",
-    "static/js/713.8f4de902.chunk.js": "/UnisroryTask/static/js/713.8f4de902.chunk.js",
-    "static/js/571.e8526bb1.chunk.js": "/UnisroryTask/static/js/571.e8526bb1.chunk.js",
-    "static/media/ImagePlanet.png": "/UnisroryTask/static/media/ImagePlanet.661387a21cfed337fa2d.png",
+    "main.css": "/UnisroryTask/static/css/main.e881b3e4.css",
+    "main.js": "/UnisroryTask/static/js/main.9e858bec.js",
+    "static/css/218.c1cf460e.chunk.css": "/UnisroryTask/static/css/218.c1cf460e.chunk.css",
+    "static/js/218.c8ad4870.chunk.js": "/UnisroryTask/static/js/218.c8ad4870.chunk.js",
+    "static/css/210.bcb6f7c2.chunk.css": "/UnisroryTask/static/css/210.bcb6f7c2.chunk.css",
+    "static/js/210.ff9d5f38.chunk.js": "/UnisroryTask/static/js/210.ff9d5f38.chunk.js",
+    "static/media/ImageHalfPlanet.png": "/UnisroryTask/static/media/ImageHalfPlanet.661387a21cfed337fa2d.png",
     "static/media/ImageMainPlanet.png": "/UnisroryTask/static/media/ImageMainPlanet.024b886b2a36fd1fb86b.png",
     "static/media/PlanetAura.png": "/UnisroryTask/static/media/PlanetAura.f2007607913756eb5647.png",
     "static/media/AvenirNextCyrRegular.woff": "/UnisroryTask/static/media/AvenirNextCyrRegular.1f3e188cad9e2dc3259b.woff",
     "static/media/BebasNeueBold.woff": "/UnisroryTask/static/media/BebasNeueBold.e0462489b6967dbc5942.woff",
     "index.html": "/UnisroryTask/index.html",
-    "main.0c3108e2.css.map": "/UnisroryTask/static/css/main.0c3108e2.css.map",
-    "main.667ed802.js.map": "/UnisroryTask/static/js/main.667ed802.js.map",
-    "75.d51031de.chunk.css.map": "/UnisroryTask/static/css/75.d51031de.chunk.css.map",
-    "75.4d457b5a.chunk.js.map": "/UnisroryTask/static/js/75.4d457b5a.chunk.js.map",
-    "713.15302bf4.chunk.css.map": "/UnisroryTask/static/css/713.15302bf4.chunk.css.map",
-    "713.8f4de902.chunk.js.map": "/UnisroryTask/static/js/713.8f4de902.chunk.js.map",
-    "571.e8526bb1.chunk.js.map": "/UnisroryTask/static/js/571.e8526bb1.chunk.js.map"
+    "main.e881b3e4.css.map": "/UnisroryTask/static/css/main.e881b3e4.css.map",
+    "main.9e858bec.js.map": "/UnisroryTask/static/js/main.9e858bec.js.map",
+    "218.c1cf460e.chunk.css.map": "/UnisroryTask/static/css/218.c1cf460e.chunk.css.map",
+    "218.c8ad4870.chunk.js.map": "/UnisroryTask/static/js/218.c8ad4870.chunk.js.map",
+    "210.bcb6f7c2.chunk.css.map": "/UnisroryTask/static/css/210.bcb6f7c2.chunk.css.map",
+    "210.ff9d5f38.chunk.js.map": "/UnisroryTask/static/js/210.ff9d5f38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c3108e2.css",
-    "static/js/main.667ed802.js"
+    "static/css/main.e881b3e4.css",
+    "static/js/main.9e858bec.js"
   ]
 }
