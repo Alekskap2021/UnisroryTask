@@ -7,7 +7,7 @@ import { ExtentionModal } from "widgets/ExtentionModal/ExtentionModal";
 
 // Providers && Configs
 import { Provider as RTKProvider } from "react-redux";
-import { DAppProvider, useEthers } from "@usedapp/core";
+import { DAppProvider } from "@usedapp/core";
 import { AppRouter } from "app/providers/router/AppRouter";
 import { dappConfig } from "./configs/dapp/dappConfig";
 import store from "app/configs/store";

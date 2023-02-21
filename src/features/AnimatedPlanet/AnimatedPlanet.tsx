@@ -20,7 +20,7 @@ interface AnimatedPlanetProps {
 export const AnimatedPlanet: FC<AnimatedPlanetProps> = (props) => {
   const { className } = props;
 
-  const orangeLine = (
+  const animatedOrangeLine = (
     <motion.svg
       initial="hidden"
       animate="visible"
@@ -76,22 +76,6 @@ export const AnimatedPlanet: FC<AnimatedPlanetProps> = (props) => {
     </motion.svg>
   );
 
-  const orbitBorder = (
-    <motion.svg
-      layoutId="planetMove"
-      whileHover={{ scale: 1.2, transition: { duration: 1 } }}
-      width="532"
-      height="532"
-      viewBox="-266 -266 532 532"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cls.AnimatedPlanet_orbitBorder}
-    >
-      {/* Orbit border */}
-      <circle cx="0" cy="0" r="266" stroke="none" />
-    </motion.svg>
-  );
-
   return (
     <>
       <div className={cn(cls.AnimatedPlanet, className)}>
@@ -99,13 +83,11 @@ export const AnimatedPlanet: FC<AnimatedPlanetProps> = (props) => {
           src={planetImg}
           alt="Planet"
           className={cls.AnimatedPlanet_planetImg}
-          initial={{ rotate: "0deg" }}
           animate={{ rotate: "360deg" }}
           transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
         />
-        {orbitBorder}
         <div className={cls.AnimatedPlanet_aura}>
-          <div className={cls.AnimatedPlanet_auraWrapper}>{orangeLine}</div>
+          <div className={cls.AnimatedPlanet_auraWrapper}>{animatedOrangeLine}</div>
           <div className={cls.AnimatedPlanet_label}>Q1 2022</div>
         </div>
       </div>
