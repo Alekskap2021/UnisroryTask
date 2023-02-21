@@ -27,6 +27,13 @@ $planetY: var(--pos-planet-y);
     right: 3%;
   }
 
+  &_orbitBorder {
+    position: absolute;
+    top: -142px;
+    right: -84px;
+    z-index: 10;
+  }
+
   &_planetImg {
     position: absolute;
     right: $planetX;

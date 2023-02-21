@@ -1,12 +1,12 @@
 export const orangeLineVariants = {
   hidden: { pathLength: 0, opacity: 0, rotate: 270 },
   visible: (i: number) => {
-    const delay = i;
+    const delay = 1 * 0.2;
     return {
       pathLength: 0.5,
       opacity: 1,
       transition: {
-        pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+        pathLength: { delay, type: "spring", duration: 1, bounce: 0 },
         opacity: { delay, duration: 0.01 },
       },
     };
