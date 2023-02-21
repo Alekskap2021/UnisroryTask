@@ -16,8 +16,7 @@ export const FormSection: FC = () => {
     <section className={cls.FormSection}>
       <RegistrationForm />
 
-      {/* {isTableVisible && <UsersTable />} */}
-      <UsersTable />
+      {isTableVisible && <UsersTable />}
     </section>
   );
 };
