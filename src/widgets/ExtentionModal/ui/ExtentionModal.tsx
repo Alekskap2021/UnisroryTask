@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import classNames from "classnames/bind";
 import cls from "./ExtentionModal.module.scss";
 import { Button } from "shared/ui";
@@ -13,6 +13,13 @@ interface ExtentionModalProps {
 
 export const ExtentionModal: FC<ExtentionModalProps> = (props) => {
   const { className, isOpened, onClose } = props;
+
+  // Запрещаем/разрешаем скролл документа в зависимости от состояния модалки
+  useEffect(() => {
+    isOpened && document.body.classList.add("hidden");
+
+    return () => document.body.classList.remove("hidden");
+  }, [isOpened]);
 
   // Возвращаем модалку, вешая пропс onClose на подложку и кнопу
   return (

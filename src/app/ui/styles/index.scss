@@ -2,6 +2,10 @@
 @import "./reset.scss";
 @import "./fonts.scss";
 
+body.hidden {
+  overflow: hidden;
+}
+
 .app {
   background: var(--color-bg);
   color: var(--color-main);
