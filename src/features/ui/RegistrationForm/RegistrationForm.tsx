@@ -36,6 +36,15 @@ export const RegistrationForm: FC<RegistrationFormProps> = (props) => {
     setEmail("");
   };
 
+  const generateSubmitBtnTitle = () => {
+    let title = "";
+
+    if (!account) title = "Please, connect your Metamask wallet";
+    else if ((!email || !userName) && !isInTable) title = "Please complete both fields";
+
+    return title;
+  };
+
   return (
     <div className={cls.RegistrationForm}>
       <h2 className={cn(cls.formTitle, "title")}>Beta test registration</h2>
@@ -90,13 +99,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = (props) => {
           disabled={!email || !userName || !account}
           className={cls.formSubmitBtn}
           onClick={onSumbitHandler}
-          title={
-            !account
-              ? "Please, connect your Metamask wallet"
-              : (!email || !userName) && !isInTable
-              ? "Please complete both fields"
-              : ""
-          }
+          title={generateSubmitBtnTitle()}
         >
           {/* Тоглим текст в кнопке сабмита */}
           {isInTable ? "List me to the table" : "Get early access"}
